@@ -847,6 +847,238 @@ footer span a:hover {
   }
 }
 
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #cc9d05;
+}
+
+.projects .max-width .title {
+  color: #fff;
+}
+
+.column-lefts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fa {
+  padding: 40px 40px 40px;
+  font-size: 30px;
+  width: 130px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 15px 22px;
+  -webkit-transform: scale(150%);
+          transform: scale(150%);
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+#projects {
+  padding: 10rem 0;
+}
+
+#projects .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 15rem;
+}
+
+#projects .item:nth-of-type(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#projects .item .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#projects .item .right {
+  margin-left: -150px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: var(--body-bg);
+  padding: 5rem 3rem;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 0px 20px #00000028;
+          box-shadow: 0px 0px 20px #00000028;
+  z-index: 2;
+}
+
+#projects .item:nth-of-type(even) .right {
+  margin-left: 0;
+}
+
+#projects .item:nth-of-type(even) .left {
+  margin-left: -150px;
+}
+
+#projects .item .left .img {
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 20px #4705fc33;
+          box-shadow: 0px 0px 20px #4705fc33;
+  position: relative;
+}
+
+#projects .item .left .img::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #5a24ed38;
+}
+
+#projects .item .left .img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.3s ease transform;
+  transition: 0.3s ease transform;
+}
+
+#projects .item:hover .left .img img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 1;
+}
+
+#projects .item .right .project-title {
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  margin-bottom: 1rem;
+}
+
+#projects .item .right .project-sub-title {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+#projects .item .right .project-desc {
+  color: var(--secondary-gray);
+  margin-bottom: 3rem;
+}
+
+#projects .item .right .external-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  padding: calc(0.6em - 4px) calc(1.6em - 4px);
+}
+
+#projects .item .right .external-link svg {
+  width: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  #projects .item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .item .left {
+    width: 100%;
+  }
+  #projects .item .right {
+    margin-left: 0;
+    width: 90%;
+    margin-top: -150px;
+  }
+  #projects .item:nth-of-type(even) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .item:nth-of-type(even) .left {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #projects .item .right .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #projects .item .right .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 #preloader {
   background: #000 url(/loader.gif) no-repeat center;
   background-size: 10%;
