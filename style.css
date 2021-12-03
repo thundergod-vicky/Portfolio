@@ -14,7 +14,7 @@ html {
 
 /* custom scroll bar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 20px;
 }
 
 ::-webkit-scrollbar-track {
@@ -88,7 +88,7 @@ section .title::after {
   bottom: -8px;
   left: 50%;
   font-size: 20px;
-  color: crimson;
+  color: #03f8f8;
   padding: 0 5px;
   background: #fff;
   -webkit-transform: translateX(-50%);
@@ -108,7 +108,7 @@ section .title::after {
 
 .navbar.sticky {
   padding: 15px 0;
-  background: crimson;
+  background: #003bfd;
 }
 
 .navbar .max-width {
@@ -130,7 +130,7 @@ section .title::after {
 }
 
 .navbar .logo a span {
-  color: crimson;
+  color: #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -155,7 +155,7 @@ section .title::after {
 }
 
 .navbar .menu li a:hover {
-  color: crimson;
+  color: #003bfd;
 }
 
 .navbar.sticky .menu li a:hover {
@@ -174,7 +174,7 @@ section .title::after {
   position: fixed;
   height: 45px;
   width: 42px;
-  background: crimson;
+  background: #003bfd;
   right: 30px;
   bottom: 10px;
   text-align: center;
@@ -243,32 +243,33 @@ section .title::after {
 }
 
 .home .home-content .text-3 span {
-  color: crimson;
+  color: #003bfd;
   font-weight: 500;
 }
 
 .home .home-content a {
   display: inline-block;
-  background: crimson;
+  background: #003bfd;
   color: #fff;
   font-size: 25px;
   padding: 12px 36px;
   margin-top: 20px;
   font-weight: 400;
   border-radius: 6px;
-  border: 2px solid crimson;
+  border: 2px solid #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .home .home-content a:hover {
-  color: crimson;
+  color: #003bfd;
   background: none;
 }
 
 /* about section styling */
 .about .title::after {
   content: "who i am";
+  color: blue;
 }
 
 .about .about-content .left {
@@ -294,7 +295,7 @@ section .title::after {
 }
 
 .about .about-content .right .text span {
-  color: crimson;
+  color: #003bfd;
 }
 
 .about .about-content .right p {
@@ -303,20 +304,20 @@ section .title::after {
 
 .about .about-content .right a {
   display: inline-block;
-  background: crimson;
+  background: #003bfd;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
   padding: 10px 30px;
   margin-top: 20px;
   border-radius: 6px;
-  border: 2px solid crimson;
+  border: 2px solid #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .about .about-content .right a:hover {
-  color: crimson;
+  color: #003bfd;
   background: none;
 }
 
@@ -349,7 +350,7 @@ section .title::after {
 }
 
 .services .serv-content .card:hover {
-  background: crimson;
+  background: #003bfd;
 }
 
 .services .serv-content .card .box {
@@ -364,7 +365,7 @@ section .title::after {
 
 .services .serv-content .card i {
   font-size: 50px;
-  color: crimson;
+  color: #003bfd;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -400,20 +401,20 @@ section .title::after {
 
 .skills .skills-content .left a {
   display: inline-block;
-  background: crimson;
+  background: #003bfd;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   padding: 8px 16px;
   margin-top: 20px;
   border-radius: 6px;
-  border: 2px solid crimson;
+  border: 2px solid #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .skills .skills-content .left a:hover {
-  color: crimson;
+  color: #003bfd;
   background: none;
 }
 
@@ -452,7 +453,7 @@ section .title::after {
   height: 100%;
   left: 0;
   top: 0;
-  background: crimson;
+  background: #003bfd;
 }
 
 .skills-content .right .html::before {
@@ -491,7 +492,7 @@ section .title::after {
 }
 
 .teams .carousel .card:hover {
-  background: crimson;
+  background: #003bfd;
 }
 
 .teams .carousel .card .box {
@@ -529,7 +530,7 @@ section .title::after {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-  border: 5px solid crimson;
+  border: 5px solid #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -549,7 +550,7 @@ section .title::after {
   margin: 0 5px;
   outline: none !important;
   border-radius: 50%;
-  border: 2px solid crimson !important;
+  border: 2px solid #003bfd !important;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -561,12 +562,13 @@ section .title::after {
 
 .owl-dot.active,
 .owl-dot:hover {
-  background: crimson !important;
+  background: #003bfd !important;
 }
 
 /* contact section styling */
 .contact .title::after {
   content: "get in touch";
+  background-color: #000;
 }
 
 .contact .contact-content .column {
@@ -603,7 +605,7 @@ section .title::after {
 
 .contact .contact-content .row i {
   font-size: 25px;
-  color: crimson;
+  color: #003bfd;
 }
 
 .contact .contact-content .info .head {
@@ -640,7 +642,7 @@ section .title::after {
 .contact .right form .textarea textarea {
   height: 100%;
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 1px solid white;
   border-radius: 6px;
   outline: none;
   padding: 0 15px;
@@ -652,7 +654,7 @@ section .title::after {
 
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus {
-  border-color: #b3b3b3;
+  border-color: #ffffff;
 }
 
 .contact .right form .textarea textarea {
@@ -681,14 +683,14 @@ section .title::after {
   cursor: pointer;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background: crimson;
-  border: 2px solid crimson;
+  background: #003bfd;
+  border: 2px solid #003bfd;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .right form .button-area button:hover {
-  color: crimson;
+  color: #003bfd;
   background: none;
 }
 
@@ -701,7 +703,7 @@ footer {
 }
 
 footer span a {
-  color: crimson;
+  color: #003bfd;
   text-decoration: none;
 }
 
@@ -851,11 +853,11 @@ footer span a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #cc9d05;
+  background-color: white;
 }
 
 .projects .max-width .title {
-  color: #fff;
+  color: black;
 }
 
 .column-lefts {
@@ -865,20 +867,24 @@ footer span a:hover {
 }
 
 .fa {
-  padding: 40px 40px 40px;
+  padding: 45px 45px 45px;
   font-size: 30px;
   width: 130px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  margin: 15px 22px;
+  margin: 15px 52px;
   -webkit-transform: scale(150%);
           transform: scale(150%);
+  opacity: 100%;
+  border-radius: 250px;
+  border: 2px solid;
 }
 
 /* Add a hover effect if you want */
 .fa:hover {
-  opacity: 0.7;
+  color: black;
+  background: none;
 }
 
 /* Set a specific color for each brand */

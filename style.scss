@@ -8,12 +8,12 @@
     text-decoration: none;
 }
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth ;
 }
 
 /* custom scroll bar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 20px;
 }
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
@@ -71,7 +71,7 @@ section .title::after{
     bottom: -8px;
     left: 50%;
     font-size: 20px;
-    color: crimson;
+    color: rgb(3, 248, 248);
     padding: 0 5px;
     background: #fff;
     transform: translateX(-50%);
@@ -88,7 +88,7 @@ section .title::after{
 }
 .navbar.sticky{
     padding: 15px 0;
-    background: crimson;
+    background: rgb(0, 59, 253);
 }
 .navbar .max-width{
     display: flex;
@@ -101,7 +101,7 @@ section .title::after{
     font-weight: 600;
 }
 .navbar .logo a span{
-    color: crimson;
+    color: rgb(0, 59, 253);
     transition: all 0.3s ease;
 }
 .navbar.sticky .logo a span{
@@ -120,7 +120,7 @@ section .title::after{
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
-    color: crimson;
+    color: rgb(0, 59, 253);
 }
 .navbar.sticky .menu li a:hover{
     color: #fff;
@@ -137,7 +137,7 @@ section .title::after{
     position: fixed;
     height: 45px;
     width: 42px;
-    background: crimson;
+    background: rgb(0, 59, 253);
     right: 30px;
     bottom: 10px;
     text-align: center;
@@ -193,29 +193,30 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: crimson;
+    color: rgb(0, 59, 253);
     font-weight: 500;
 }
 .home .home-content a{
     display: inline-block;
-    background: crimson;
+    background: rgb(0, 59, 253);
     color: #fff;
     font-size: 25px;
     padding: 12px 36px;
     margin-top: 20px;
     font-weight: 400;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid rgb(0, 59, 253);
     transition: all 0.3s ease;
 }
 .home .home-content a:hover{
-    color: crimson;
+    color: rgb(0, 59, 253);
     background: none;
 }
 
 /* about section styling */
 .about .title::after{
     content: "who i am";
+    color: blue;
 }
 .about .about-content .left{
     width: 45%;
@@ -235,25 +236,25 @@ section .title::after{
     margin-bottom: 10px;
 }
 .about .about-content .right .text span{
-    color: crimson;
+    color: rgb(0, 59, 253);
 }
 .about .about-content .right p{
     text-align: justify;
 }
 .about .about-content .right a{
     display: inline-block;
-    background: crimson;
+    background: rgb(0, 59, 253);
     color: #fff;
     font-size: 20px;
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid rgb(0, 59, 253);
     transition: all 0.3s ease;
 }
 .about .about-content .right a:hover{
-    color: crimson;
+    color: rgb(0, 59, 253);
     background: none;
 }
 
@@ -281,7 +282,7 @@ section .title::after{
     transition: all 0.3s ease;
 }
 .services .serv-content .card:hover{
-    background: crimson;
+    background: rgb(0, 59, 253);
 }
 .services .serv-content .card .box{
     transition: all 0.3s ease;
@@ -291,7 +292,7 @@ section .title::after{
 }
 .services .serv-content .card i{
     font-size: 50px;
-    color: crimson;
+    color: rgb(0, 59, 253);
     transition: color 0.3s ease;
 }
 .services .serv-content .card:hover i{
@@ -321,18 +322,18 @@ section .title::after{
 }
 .skills .skills-content .left a{
     display: inline-block;
-    background: crimson;
+    background: rgb(0, 59, 253);
     color: #fff;
     font-size: 18px;
     font-weight: 500;
     padding: 8px 16px;
     margin-top: 20px;
     border-radius: 6px;
-    border: 2px solid crimson;
+    border: 2px solid rgb(0, 59, 253);
     transition: all 0.3s ease;
 }
 .skills .skills-content .left a:hover{
-    color: crimson;
+    color: rgb(0, 59, 253);
     background: none;
 }
 .skills .skills-content .right .bars{
@@ -360,7 +361,7 @@ section .title::after{
     height: 100%;
     left: 0;
     top: 0;
-    background: crimson;
+    background: rgb(0, 59, 253);
 }
 .skills-content .right .html::before{
     width: 90%;
@@ -391,7 +392,7 @@ section .title::after{
     transition: all 0.3s ease;
 }
 .teams .carousel .card:hover{
-    background: crimson;
+    background: rgb(0, 59, 253);
 }
 .teams .carousel .card .box{
     display: flex;
@@ -413,7 +414,7 @@ section .title::after{
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid crimson;
+    border: 5px solid rgb(0, 59, 253);
     transition: all 0.3s ease;
 }
 .teams .carousel .card:hover img{
@@ -429,7 +430,7 @@ section .title::after{
     margin: 0 5px;
     outline: none!important;
     border-radius: 50%;
-    border: 2px solid crimson!important;
+    border: 2px solid rgb(0, 59, 253)!important;
     transition: all 0.3s ease;
 }
 .owl-dot.active{
@@ -438,12 +439,15 @@ section .title::after{
 }
 .owl-dot.active,
 .owl-dot:hover{
-    background: crimson!important;
+    background: rgb(0, 59, 253)!important;
 }
 
 /* contact section styling */
+
+
 .contact .title::after{
     content: "get in touch";
+    background-color: #000;
 }
 .contact .contact-content .column{
     width: calc(50% - 30px);
@@ -469,7 +473,7 @@ section .title::after{
 }
 .contact .contact-content .row i{
     font-size: 25px;
-    color: crimson;
+    color: rgb(0, 59, 253);
 }
 .contact .contact-content .info .head{
     font-weight: 500;
@@ -497,7 +501,7 @@ section .title::after{
 .contact .right form .textarea textarea{
     height: 100%;
     width: 100%;
-    border: 1px solid lightgrey;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 6px;
     outline: none;
     padding: 0 15px;
@@ -507,7 +511,7 @@ section .title::after{
 }
 .contact .right form .field input:focus,
 .contact .right form .textarea textarea:focus{
-    border-color: #b3b3b3;
+    border-color: #ffffff;
 }
 .contact .right form .textarea textarea{
   padding-top: 10px;
@@ -528,12 +532,12 @@ section .title::after{
   border-radius: 6px;
   cursor: pointer;
   flex-wrap: nowrap;
-  background: crimson;
-  border: 2px solid crimson;
+  background: rgb(0, 59, 253);
+  border: 2px solid rgb(0, 59, 253);
   transition: all 0.3s ease;
 }
 .right form .button-area button:hover{
-  color: crimson;
+  color: rgb(0, 59, 253);
   background: none;
 }
 /* footer section styling */
@@ -544,7 +548,7 @@ footer{
     text-align: center;
 }
 footer span a{
-    color: crimson;
+    color: rgb(0, 59, 253);
     text-decoration: none;
 }
 footer span a:hover{
@@ -683,32 +687,38 @@ footer span a:hover{
 
 .projects{
     display: flex;
-    background-color: rgb(204, 157, 5);
+    background-color: rgb(255, 255, 255);
 }
 .projects .max-width .title{
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 .column-lefts{
     display: flex;
 }
 
 
+// Social Media section
+
 .fa {
-  padding: 40px 40px 40px ;
+  padding: 45px 45px 45px ;
   font-size: 30px;
   width: 130px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-   margin: 15px 22px;
+   margin: 15px 52px;
    transform:scale(150%);
+   opacity: 100%;
+   border-radius: 250px;
+   border: 2px solid;
 }
 
 /* Add a hover effect if you want */
 .fa:hover {
-  opacity: 0.7;
-  
+  color: rgb(0, 0, 0);
+  background: none;
 }
+
 
 /* Set a specific color for each brand */
 
