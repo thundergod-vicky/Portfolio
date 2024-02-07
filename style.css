@@ -1,10 +1,11 @@
 /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -40,7 +41,12 @@ section {
   margin: auto;
 }
 
-.about, .services, .skills, .teams, .contact, footer {
+.about,
+.services,
+.skills,
+.teams,
+.contact,
+footer {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -52,13 +58,13 @@ section {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 section .title {
@@ -80,7 +86,7 @@ section .title::before {
   height: 3px;
   background: #111;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 section .title::after {
@@ -92,7 +98,7 @@ section .title::after {
   padding: 0 5px;
   background: #fff;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 /* navbar styling */
@@ -116,11 +122,11 @@ section .title::after {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .navbar .logo a {
@@ -199,7 +205,7 @@ section .title::after {
 
 .scroll-up-btn:hover {
   -webkit-filter: brightness(90%);
-          filter: brightness(90%);
+  filter: brightness(90%);
 }
 
 /* home section styling */
@@ -207,7 +213,7 @@ section .title::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("/banner1.jpg") no-repeat center;
+  background: url("/banner1 .jpg") no-repeat center;
   height: 100vh;
   color: #fff;
   min-height: 500px;
@@ -280,7 +286,7 @@ section .title::after {
   height: 400px;
   width: 400px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 6px;
 }
 
@@ -322,7 +328,8 @@ section .title::after {
 }
 
 /* services section styling */
-.services, .teams {
+.services,
+.teams {
   color: #fff;
   background: #111;
 }
@@ -360,7 +367,7 @@ section .title::after {
 
 .services .serv-content .card:hover .box {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .services .serv-content .card i {
@@ -428,11 +435,11 @@ section .title::after {
   display: flex;
   margin-bottom: 5px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .skills .skills-content .right span {
@@ -457,23 +464,23 @@ section .title::after {
 }
 
 .skills-content .right .html::before {
-  width: 90%;
+  width: 100%;
 }
 
 .skills-content .right .css::before {
-  width: 60%;
+  width: 100%;
 }
 
 .skills-content .right .js::before {
-  width: 80%;
+  width: 100%;
 }
 
 .skills-content .right .php::before {
-  width: 50%;
+  width: 100%;
 }
 
 .skills-content .right .mysql::before {
-  width: 70%;
+  width: 100%;
 }
 
 /* teams section styling */
@@ -501,21 +508,21 @@ section .title::after {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .teams .carousel .card:hover .box {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .teams .carousel .card .text {
@@ -528,7 +535,7 @@ section .title::after {
   height: 150px;
   width: 150px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   border: 5px solid #003bfd;
   -webkit-transition: all 0.3s ease;
@@ -595,8 +602,8 @@ section .title::after {
   display: flex;
   height: 65px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .contact .contact-content .row .info {
@@ -667,8 +674,8 @@ section .title::after {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .right form .button-area button {
@@ -682,7 +689,7 @@ section .title::after {
   border-radius: 6px;
   cursor: pointer;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   background: #003bfd;
   border: 2px solid #003bfd;
   -webkit-transition: all 0.3s ease;
@@ -730,9 +737,11 @@ footer span a:hover {
     display: block;
     z-index: 999;
   }
+
   .menu-btn i.active:before {
     content: "\f00d";
   }
+
   .navbar .menu {
     position: fixed;
     height: 100vh;
@@ -745,51 +754,63 @@ footer span a:hover {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+
   .navbar .menu.active {
     left: 0;
   }
+
   .navbar .menu li {
     display: block;
   }
+
   .navbar .menu li a {
     display: inline-block;
     margin: 20px 0;
     font-size: 25px;
   }
+
   .home .home-content .text-2 {
     font-size: 70px;
   }
+
   .home .home-content .text-3 {
     font-size: 35px;
   }
+
   .home .home-content a {
     font-size: 23px;
     padding: 10px 30px;
   }
+
   .max-width {
     max-width: 930px;
   }
+
   .about .about-content .column {
     width: 100%;
   }
+
   .about .about-content .left {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin: 0 auto 60px;
   }
+
   .about .about-content .right {
     -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%;
   }
+
   .services .serv-content .card {
     width: calc(50% - 10px);
     margin-bottom: 20px;
   }
+
   .skills .skills-content .column,
   .contact .contact-content .column {
     width: 100%;
@@ -801,15 +822,19 @@ footer span a:hover {
   .max-width {
     padding: 0 23px;
   }
+
   .home .home-content .text-2 {
     font-size: 60px;
   }
+
   .home .home-content .text-3 {
     font-size: 32px;
   }
+
   .home .home-content a {
     font-size: 20px;
   }
+
   .services .serv-content .card {
     width: 100%;
   }
@@ -819,26 +844,32 @@ footer span a:hover {
   .home .home-content .text-2 {
     font-size: 50px;
   }
+
   .home .home-content .text-3 {
     font-size: 27px;
   }
+
   .about .about-content .right .text,
   .skills .skills-content .left .text {
     font-size: 19px;
   }
+
   .contact .right form .fields {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   .contact .right form .name,
   .contact .right form .email {
     margin: 0;
   }
+
   .right form .error-box {
     width: 150px;
   }
+
   .scroll-up-btn {
     right: 15px;
     bottom: 15px;
@@ -849,11 +880,12 @@ footer span a:hover {
   }
 }
 
-.projects {
+/* .projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: white;
+  position: relative;
 }
 
 .projects .max-width .title {
@@ -875,26 +907,23 @@ footer span a:hover {
   border-radius: 50%;
   margin: 15px 52px;
   -webkit-transform: scale(150%);
-          transform: scale(150%);
+  transform: scale(150%);
   opacity: 100%;
   border-radius: 250px;
   border: 2px solid;
 }
 
-/* Add a hover effect if you want */
 .fa:hover {
   color: black;
   background: none;
 }
 
-/* Set a specific color for each brand */
-/* Facebook */
+
 .fa-facebook {
   background: #3B5998;
   color: white;
 }
 
-/* Twitter */
 .fa-twitter {
   background: #55ACEE;
   color: white;
@@ -934,11 +963,11 @@ footer span a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 15rem;
@@ -947,26 +976,26 @@ footer span a:hover {
 #projects .item:nth-of-type(even) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 #projects .item .left {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 #projects .item .right {
   margin-left: -150px;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   background-color: var(--body-bg);
   padding: 5rem 3rem;
   border-radius: 12px;
   -webkit-box-shadow: 0px 0px 20px #00000028;
-          box-shadow: 0px 0px 20px #00000028;
+  box-shadow: 0px 0px 20px #00000028;
   z-index: 2;
 }
 
@@ -985,7 +1014,7 @@ footer span a:hover {
   border-radius: 12px;
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 20px #4705fc33;
-          box-shadow: 0px 0px 20px #4705fc33;
+  box-shadow: 0px 0px 20px #4705fc33;
   position: relative;
 }
 
@@ -1001,14 +1030,14 @@ footer span a:hover {
 
 #projects .item .left .img img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -webkit-transition: 0.3s ease transform;
   transition: 0.3s ease transform;
 }
 
 #projects .item:hover .left .img img {
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   z-index: 1;
 }
 
@@ -1033,11 +1062,11 @@ footer span a:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 1rem;
   padding: calc(0.6em - 4px) calc(1.6em - 4px);
 }
@@ -1050,23 +1079,27 @@ footer span a:hover {
   #projects .item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   #projects .item .left {
     width: 100%;
   }
+
   #projects .item .right {
     margin-left: 0;
     width: 90%;
     margin-top: -150px;
   }
+
   #projects .item:nth-of-type(even) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   #projects .item:nth-of-type(even) .left {
     margin-left: 0;
   }
@@ -1076,14 +1109,15 @@ footer span a:hover {
   #projects .item .right .buttons {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   #projects .item .right .buttons a {
     width: 100%;
     text-align: center;
   }
-}
+} */
 
 #preloader {
   background: #000 url(/loader.gif) no-repeat center;
@@ -1093,4 +1127,3 @@ footer span a:hover {
   position: fixed;
   z-index: 100;
 }
-/*# sourceMappingURL=style.css.map */
