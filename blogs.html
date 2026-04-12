@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Engineering Journal | Souvik Basu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #111;
+            --accent-blue: #003bfd;
+            --text-muted: #666;
+            --bg-light: #f8f9fa;
+        }
+
+        body { background: #fff; font-family: 'Poppins', sans-serif; color: #111; }
+        
+        .navbar {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .max-width { max-width: 1250px; margin: auto; padding: 0 40px; }
+        
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Ubuntu', sans-serif; font-size: 24px; font-weight: 700; color: #111; text-decoration: none; }
+        .logo span { color: var(--accent-blue); }
+
+        /* Magazine Header */
+        .magazine-header { padding: 80px 0 40px; text-align: center; }
+        .magazine-header h1 { font-family: 'Playfair Display', serif; font-size: 64px; margin-bottom: 15px; letter-spacing: -2px; }
+        .magazine-header p { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: auto; }
+
+        /* Featured Post */
+        .featured-post {
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: #fdfdfd;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #eee;
+        }
+        .featured-img { width: 100%; height: 450px; border-radius: 15px; overflow: hidden; }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .featured-post:hover .featured-img img { transform: scale(1.03); }
+        
+        .featured-content .tag { background: var(--accent-blue); color: #fff; padding: 6px 15px; border-radius: 30px; font-size: 12px; font-weight: 600; margin-bottom: 25px; display: inline-block; }
+        .featured-content h2 { font-family: 'Playfair Display', serif; font-size: 42px; line-height: 1.2; margin-bottom: 20px; }
+        .featured-content p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; }
+        .btn-featured { background: #111; color: #fff; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+        .btn-featured:hover { background: var(--accent-blue); transform: translateY(-3px); }
+
+        /* Category Filter */
+        .filter-nav { display: flex; justify-content: center; gap: 30px; margin-bottom: 60px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .filter-nav a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 14px; transition: 0.3s; position: relative; }
+        .filter-nav a:hover, .filter-nav a.active { color: #111; }
+        .filter-nav a.active::after { content: ''; position: absolute; bottom: -21px; left: 0; width: 100%; height: 2px; background: #111; }
+
+        /* Blog Grid & Sidebar */
+        .main-layout { display: grid; grid-template-columns: 1fr 350px; gap: 60px; }
+
+        .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .blog-card { 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 40px; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            position: relative;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+        }
+        .blog-img { 
+            height: 240px; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .blog-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .blog-card:hover .blog-img img {
+            transform: scale(1.08);
+        }
+        .blog-info h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 26px; 
+            margin-bottom: 15px; 
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+        .blog-card:hover h3 {
+            color: var(--accent-blue);
+        }
+        .blog-info p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+        .read-link { 
+            color: #111; 
+            font-weight: 700; 
+            text-decoration: none; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        .blog-card:hover .read-link {
+            color: var(--accent-blue);
+            gap: 15px;
+        }
+
+        /* Sidebar Swag */
+        .sidebar { position: sticky; top: 120px; height: fit-content; }
+        .sidebar-section { margin-bottom: 50px; }
+        .sidebar-section h4 { font-family: 'Ubuntu', sans-serif; font-size: 18px; border-left: 4px solid var(--accent-blue); padding-left: 15px; margin-bottom: 25px; }
+        
+        .about-box { background: var(--bg-light); padding: 30px; border-radius: 15px; }
+        .about-box img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+        .about-box p { font-size: 14px; color: var(--text-muted); }
+
+        .newsletter-box { background: #111; color: #fff; padding: 30px; border-radius: 15px; }
+        .newsletter-box input { width: 100%; padding: 12px; border: none; border-radius: 8px; margin: 20px 0 10px; background: #222; color: #fff; }
+        .newsletter-box button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: var(--accent-blue); color: #fff; font-weight: 600; cursor: pointer; }
+
+        footer { background: #111; color: #fff; padding: 80px 0; text-align: center; margin-top: 100px; }
+
+        @media (max-width: 1100px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-img { height: 350px; }
+        }
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .magazine-header h1 { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="nav-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 2px;">Souvik<span style="color: var(--accent-blue); font-size: 30px; line-height: 0;">.</span>Basu</a>
+                <div class="search-bar" style="position: relative; display: flex; align-items: center;">
+                    <i class="fas fa-search" style="position: absolute; left: 18px; color: #aaa; font-size: 14px; pointer-events: none;"></i>
+                    <input type="text" id="search-input" placeholder="Search articles..." style="padding: 12px 20px 12px 48px; border-radius: 30px; border: 1px solid #ddd; width: 280px; font-size: 14px; outline: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #fdfdfd; font-family: 'Poppins', sans-serif; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                    <style>
+                        .search-bar input:focus {
+                            border-color: var(--accent-blue);
+                            background: #fff;
+                            box-shadow: 0 10px 20px rgba(0, 59, 253, 0.08);
+                            width: 350px;
+                        }
+                        .search-bar input:hover {
+                            border-color: #bbb;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="magazine-header">
+        <div class="max-width">
+            <h1>The Engineering Journal</h1>
+            <p>Thoughts on building the future of web, cloud, and intelligence.</p>
+        </div>
+    </header>
+
+    <main class="max-width">
+        <!-- Featured Article -->
+        <article class="featured-post" id="featured-hero">
+            <div class="featured-img">
+                <img src="blog images/mern-header.png" alt="MERN Stack">
+            </div>
+            <div class="featured-content">
+                <span class="tag">EDITOR'S PICK</span>
+                <h2>Mastering the MERN Stack in 2026: Architecting for Scale</h2>
+                <p>Learn how to move beyond basic CRUD and build resilient, high-capacity ecosystems using the latest advancements in the MERN ecosystem. From Serverless Node.js to Edge-optimized React.</p>
+                <a href="blog/mern-stack.html" class="btn-featured">Read Full Story</a>
+            </div>
+        </article>
+
+        <!-- Filters -->
+        <div class="filter-nav">
+            <a href="#" class="filter-btn active" data-filter="all">All Posts</a>
+            <a href="#" class="filter-btn" data-filter="fullstack">Full Stack</a>
+            <a href="#" class="filter-btn" data-filter="devops">DevOps</a>
+            <a href="#" class="filter-btn" data-filter="ai">AI & ML</a>
+            <a href="#" class="filter-btn" data-filter="architecture">Architecture</a>
+            <a href="#" class="filter-btn" data-filter="blockchain">Blockchain</a>
+        </div>
+
+        <div class="main-layout">
+            <div class="blog-grid" id="blog-grid">
+                <!-- Blog 1 (Copy of Featured for Grid) -->
+                <div class="blog-card" data-category="fullstack">
+                    <a href="blog/mern-stack.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/mern-header.png" alt="MERN Stack"></div>
+                        <div class="blog-info">
+                            <h3>Mastering the MERN Stack in 2026</h3>
+                            <p>Deep dive into creating scalable, production-ready applications with modern best practices.</p>
+                            <span class="read-link">Continue Reading &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="blog-card" data-category="devops">
+                    <a href="blog/devops-pipeline.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/cicd-header.png" alt="DevOps"></div>
+                        <div class="blog-info">
+                            <h3>Automating the Future: CI/CD on AWS</h3>
+                            <p>Bridging the gap between code and production with professional grade automation tools.</p>
+                            <span class="read-link">Continue Reading &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog-card" data-category="ai">
+                    <a href="blog/ai-finetuning.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/ai-header.png" alt="AI LLM"></div>
+                        <div class="blog-info">
+                            <h3>Personalizing Intelligence: LLM Fine-Tuning</h3>
+                            <p>How businesses are leveraging specialized AI models to gain a competitive edge.</p>
+                            <span class="read-link">Continue Reading &rarr;</a></span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="blog-card" data-category="architecture">
+                    <a href="blog/microservices-architecture.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/micro-header.png" alt="Microservices"></div>
+                        <div class="blog-info">
+                            <h3>Scale Fast: Microservices Decoded</h3>
+                            <p>Breaking down the monolith to build agile, independent, and scalable systems.</p>
+                            <span class="read-link">Continue Reading &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog 5 -->
+                <div class="blog-card" data-category="blockchain">
+                    <a href="blog/blockchain-basics.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/blockchain-header.png" alt="Blockchain"></div>
+                        <div class="blog-info">
+                            <h3>Web3 & Beyond: Trustless Engineering</h3>
+                            <p>Entering the world of decentralized ledgers and smart contract development.</p>
+                            <span class="read-link">Continue Reading &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog 6 -->
+                <div class="blog-card" data-category="architecture">
+                    <a href="blog/database-optimization.html" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-img"><img src="blog images/db-header.png" alt="Database Optimization"></div>
+                        <div class="blog-info">
+                            <h3>Speed & Scale: Database Optimization</h3>
+                            <p>Mastering Redis and Sharding for millions of concurrent users.</p>
+                            <span class="read-link">Continue Reading &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h4>About the Author</h4>
+                    <div class="about-box">
+                        <img src="project images /adhyayanedu.png" alt="Souvik">
+                        <p><strong>Souvik Basu</strong> is a Full Stack & DevOps Engineer dedicated to solving complex scalability problems through elegant code and robust infrastructure.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const featuredHero = document.getElementById('featured-hero');
+        let activeFilter = 'all';
+
+        // Combined Filter Function
+        function updateDisplay() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visibleInGrid = 0;
+
+            blogCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const text = card.querySelector('p').innerText.toLowerCase();
+                
+                const matchesCategory = (activeFilter === 'all' || activeFilter === category);
+                const matchesSearch = (title.includes(searchTerm) || text.includes(searchTerm));
+
+                // Redundancy check: don't show MERN in grid if we are in 'all' view with no search (it's in the hero)
+                const isRedundantMern = (activeFilter === 'all' && category === 'fullstack' && searchTerm === '');
+
+                if (matchesCategory && matchesSearch && !isRedundantMern) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                    visibleInGrid++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Handle Hero visibility
+            if (activeFilter === 'all' && searchTerm === '') {
+                featuredHero.style.display = 'grid';
+            } else if (activeFilter === 'fullstack' && searchTerm === '') {
+                // Keep hero if specifically looking for fullstack with no search
+                featuredHero.style.display = 'grid';
+            } else {
+                featuredHero.style.display = 'none';
+            }
+        }
+
+        // Search Listener
+        searchInput.addEventListener('input', updateDisplay);
+
+        // Category Listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                activeFilter = btn.getAttribute('data-filter');
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateDisplay();
+            });
+        });
+        
+        // Initial setup
+        updateDisplay();
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+
+
+    <footer>
+        <div class="max-width">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px;">Souvik Basu</h2>
+            <p style="opacity: 0.6; font-size: 14px; margin-bottom: 40px;">Crafting the future of software, one byte at a time.</p>
+            <div style="display: flex; justify-content: center; gap: 30px; font-size: 20px;">
+                <a href="https://www.linkedin.com/in/souvik-basu-99a4581a2/" target="_blank" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-github"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p style="margin-top: 60px; font-size: 12px; opacity: 0.4;">&copy; 2026 THE ENGINEERING JOURNAL. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+</html>

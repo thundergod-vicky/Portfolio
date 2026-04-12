@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalable Microservices with AWS and Docker | Souvik Basu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f4f7fe;
+            color: #2d3436;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+        }
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../blog images/micro-header.png');
+            background-size: cover;
+            background-position: center;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .blog-container {
+            max-width: 850px;
+            margin: -120px auto 100px;
+            background: #fff;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #d35400;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 40px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            background: #fdf2e9;
+            border-radius: 8px;
+        }
+        .back-btn:hover {
+            background: #d35400;
+            color: #fff;
+            transform: translateX(-5px);
+        }
+        h1 { font-family: 'Ubuntu', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        h2 { font-family: 'Ubuntu', sans-serif; margin-top: 50px; margin-bottom: 25px; color: #d35400; font-weight: 700; border-bottom: 3px solid #fdf2e9; display: inline-block; padding-bottom: 5px; }
+        
+        .meta { margin-bottom: 40px; font-size: 14px; color: #636e72; display: flex; gap: 20px; justify-content: center; }
+        .meta span { display: flex; align-items: center; gap: 8px; }
+
+        .content p { margin-bottom: 25px; font-size: 17px; color: #4b5563; }
+        
+        .architecture-card { 
+            background: #ffffff;
+            border: 2px dashed #d35400;
+            padding: 30px; 
+            margin: 30px 0; 
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .code-block { 
+            background: #1a202c; 
+            color: #edf2f7; 
+            padding: 30px; 
+            border-radius: 15px; 
+            font-family: 'Fira Code', 'Courier New', monospace; 
+            font-size: 14px;
+            overflow-x: auto; 
+            margin: 40px 0;
+            line-height: 1.6;
+            white-space: pre;
+            border: 1px solid #2d3748;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .cta-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0077b5;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover { background: #005582; transform: scale(1.05); }
+
+        footer { background: #111; color: #fff; padding: 60px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="max-width">
+            <h1>Scalable Microservices with AWS and Docker</h1>
+            <div class="meta" style="color: rgba(255,255,255,0.8);">
+                <span><i class="far fa-calendar-alt"></i> September 10, 2025</span>
+                <span><i class="far fa-user"></i> Souvik Basu</span>
+                <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-container">
+        <a href="../blogs.html" class="back-btn">
+            <i class="fas fa-long-arrow-alt-left"></i> All Articles
+        </a>
+
+        <div class="content">
+            <p>Monolithic architectures are becoming harder to maintain as development teams scale. Microservices offer a way to decompose a large application into smaller, independently deployable services that communicate over a network.</p>
+
+            <h2>Why Docker is the Foundation</h2>
+            <p>Docker provides a consistent environment for these services to run. Whether it's a Node.js authentication service or a Python data processing worker, containerization ensures they behave identically across development, staging, and production on AWS.</p>
+
+            <pre class="code-block"><code># Sample Docker Compose for Microservices
+version: '3.8'
+services:
+  auth-service:
+    build: ./auth
+    ports:
+      - "5001:5000"
+    environment:
+      - MONGO_URI=mongodb://db:27017/auth
+  
+  order-service:
+    build: ./orders
+    ports:
+      - "5002:5000"
+    depends_on:
+      - auth-service</code></pre>
+
+            <h2>Scaling on AWS</h2>
+            <div class="architecture-card">
+                <h4>AWS Infrastructure Overview</h4>
+                <p><strong>ECS (Elastic Container Service)</strong> + <strong>Fargate</strong> = Serverless Microservices</p>
+                <p>Using Fargate allows us to run containers without managing the underlying EC2 instances, providing automatic scaling based on CPU and memory demand.</p>
+            </div>
+
+            <h2>Inter-Service Communication</h2>
+            <p>Choosing the right communication protocol is vital. While <strong>REST APIs</strong> are common, <strong>RabbitMQ</strong> or <strong>AWS SQS</strong> are often better choices for asynchronous tasks, ensuring your system remains decoupled and fault-tolerant.</p>
+
+            <div class="cta-section">
+                <h3>Building Scalable Systems?</h3>
+                <p>I specialize in architecting high-performance backends using AWS and containerization technologies.</p>
+                <a href="https://www.linkedin.com/in/souvik-basu-99a4581a2/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> Let's Discuss Architecture
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Souvik Basu. Engineered for Scale.</p>
+    </footer>
+</body>
+</html>

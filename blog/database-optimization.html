@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing Database Performance with Redis and Sharding | Souvik Basu</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #fdfdfd; color: #2d3436; line-height: 1.8; font-family: 'Poppins', sans-serif; }
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../blog images/db-header.png');
+            background-size: cover; background-position: center; height: 480px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 0 20px; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .blog-container { max-width: 850px; margin: -120px auto 100px; background: #fff; padding: 60px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); position: relative; }
+        .back-btn { display: inline-flex; align-items: center; gap: 10px; color: #e74c3c; text-decoration: none; font-weight: 600; margin-bottom: 40px; font-size: 15px; transition: all 0.3s ease; padding: 8px 16px; background: #fdedec; border-radius: 8px; }
+        .back-btn:hover { background: #e74c3c; color: #fff; transform: translateX(-5px); }
+        h1 { font-family: 'Ubuntu', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        h2 { font-family: 'Ubuntu', sans-serif; margin-top: 50px; margin-bottom: 25px; color: #e74c3c; font-weight: 700; border-bottom: 3px solid #fdedec; display: inline-block; padding-bottom: 5px; }
+        .meta { margin-bottom: 40px; font-size: 14px; color: #636e72; display: flex; gap: 20px; justify-content: center; }
+        .meta span { display: flex; align-items: center; gap: 8px; }
+        .content p { margin-bottom: 25px; font-size: 17px; color: #4b5563; }
+        .code-block { background: #1a202c; color: #edf2f7; padding: 30px; border-radius: 15px; font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin: 40px 0; line-height: 1.6; white-space: pre; border: 1px solid #2d3748; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cta-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee; text-align: center; }
+        .social-link { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s ease; }
+        .social-link:hover { background: #005582; transform: scale(1.05); }
+        footer { background: #111; color: #fff; padding: 60px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="max-width">
+            <h1>Optimizing Database Performance with Redis and Sharding</h1>
+            <div class="meta" style="color: rgba(255,255,255,0.8);">
+                <span><i class="far fa-calendar-alt"></i> September 25, 2025</span>
+                <span><i class="far fa-user"></i> Souvik Basu</span>
+                <span><i class="far fa-clock"></i> 9 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-container">
+        <a href="../blogs.html" class="back-btn">
+            <i class="fas fa-long-arrow-alt-left"></i> All Articles
+        </a>
+
+        <div class="content">
+            <p>Database bottlenecks are the primary reason for slow applications. As your user base grows, a single database instance will eventually reach its limits. This guide explores two powerful strategies to overcome these hurdles: Caching and Sharding.</p>
+
+            <h2>Caching with Redis</h2>
+            <p>Redis is an in-memory data structure store that can be used as a database, cache, and message broker. By caching frequently accessed data (like user sessions or popular product listings), you can reduce the load on your primary database and achieve sub-millisecond response times.</p>
+
+            <pre class="code-block"><code>// Sample Redis Caching Pattern in Node.js
+const cachedData = await redis.get('popular_items');
+
+if (cachedData) {
+    return JSON.parse(cachedData);
+} else {
+    const freshData = await PrimaryDB.items.findMany();
+    await redis.set('popular_items', JSON.stringify(freshData), 'EX', 3600);
+    return freshData;
+}</code></pre>
+
+            <h2>Database Sharding</h2>
+            <p>Sharding involves partitioning your database into smaller, more manageable pieces called shards. Each shard is stored on a separate server instance. This horizontal scaling approach allows your system to handle massive amounts of data and concurrent users by spreading the workload across multiple nodes.</p>
+
+            <h2>Indexing Best Practices</h2>
+            <p>Before jumping to sharding, ensure your queries are optimized. Proper indexing on commonly used fields, avoiding <code>SELECT *</code>, and using query profilers can often provide significant performance gains without the complexity of a distributed setup.</p>
+
+            <div class="cta-section">
+                <h3>Scaling your Backend?</h3>
+                <p>I specialize in building high-performance systems that can handle millions of requests.</p>
+                <a href="https://www.linkedin.com/in/souvik-basu-99a4581a2/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> Let's Optimize your Tech
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Souvik Basu. Performance First.</p>
+    </footer>
+</body>
+</html>

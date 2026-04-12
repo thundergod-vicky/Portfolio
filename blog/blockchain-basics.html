@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Blockchain: Smart Contracts and DApps | Souvik Basu</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #fdfdfd; color: #2d3436; line-height: 1.8; font-family: 'Poppins', sans-serif; }
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../blog images/blockchain-header.png');
+            background-size: cover; background-position: center; height: 480px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 0 20px; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .blog-container { max-width: 850px; margin: -120px auto 100px; background: #fff; padding: 60px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); position: relative; }
+        .back-btn { display: inline-flex; align-items: center; gap: 10px; color: #f39c12; text-decoration: none; font-weight: 600; margin-bottom: 40px; font-size: 15px; transition: all 0.3s ease; padding: 8px 16px; background: #fef9e7; border-radius: 8px; }
+        .back-btn:hover { background: #f39c12; color: #fff; transform: translateX(-5px); }
+        h1 { font-family: 'Ubuntu', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        h2 { font-family: 'Ubuntu', sans-serif; margin-top: 50px; margin-bottom: 25px; color: #f39c12; font-weight: 700; border-bottom: 3px solid #fef9e7; display: inline-block; padding-bottom: 5px; }
+        .meta { margin-bottom: 40px; font-size: 14px; color: #636e72; display: flex; gap: 20px; justify-content: center; }
+        .meta span { display: flex; align-items: center; gap: 8px; }
+        .content p { margin-bottom: 25px; font-size: 17px; color: #4b5563; }
+        .code-block { background: #1a202c; color: #edf2f7; padding: 30px; border-radius: 15px; font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin: 40px 0; line-height: 1.6; white-space: pre; border: 1px solid #2d3748; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .cta-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee; text-align: center; }
+        .social-link { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: #fff; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s ease; }
+        .social-link:hover { background: #005582; transform: scale(1.05); }
+        footer { background: #111; color: #fff; padding: 60px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="max-width">
+            <h1>Exploring Blockchain: Smart Contracts and DApps</h1>
+            <div class="meta" style="color: rgba(255,255,255,0.8);">
+                <span><i class="far fa-calendar-alt"></i> September 20, 2025</span>
+                <span><i class="far fa-user"></i> Souvik Basu</span>
+                <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-container">
+        <a href="../blogs.html" class="back-btn">
+            <i class="fas fa-long-arrow-alt-left"></i> All Articles
+        </a>
+
+        <div class="content">
+            <p>Blockchain technology is more than just a foundation for cryptocurrencies. It is a decentralized ledger that enables trustless transactions, transparent governance, and the creation of unstoppable applications.</p>
+
+            <h2>The Power of Smart Contracts</h2>
+            <p>Smart contracts are self-executing contracts with the terms of the agreement directly written into lines of code. They run on the blockchain, ensuring that once a condition is met, the contract executes automatically without the need for an intermediary.</p>
+
+            <pre class="code-block"><code>// Simple Solidity Smart Contract
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 public data;
+
+    function set(uint256 x) public {
+        data = x;
+    }
+
+    function get() public view returns (uint256) {
+        return data;
+    }
+}</code></pre>
+
+            <h2>What are DApps?</h2>
+            <p>Decentralized Applications (DApps) leverage the Ethereum network (or others like Polygon and Solana) to provide services that aren't controlled by a single entity. They offer increased security, user privacy, and global accessibility.</p>
+
+            <h2>Web3 Integration</h2>
+            <p>Integrating Web3 into modern applications involves using libraries like <strong>Ethers.js</strong> or <strong>Web3.js</strong> to connect your frontend with the blockchain, allowing users to interact with smart contracts directly from their browser using wallets like MetaMask.</p>
+
+            <div class="cta-section">
+                <h3>Building a Decentralized Future?</h3>
+                <p>I help bridge the gap between traditional Web2 architectures and emerging Web3 technologies.</p>
+                <a href="https://www.linkedin.com/in/souvik-basu-99a4581a2/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Souvik Basu. Decentralizing the Web.</p>
+    </footer>
+</body>
+</html>
