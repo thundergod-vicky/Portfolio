@@ -174,7 +174,7 @@
         </div>
     </nav>
 
-    <header class="magazine-header">
+    <header class="magazine-header reveal-on-scroll">
         <div class="max-width">
             <h1>The Engineering Journal</h1>
             <p>Thoughts on building the future of web, cloud, and intelligence.</p>
@@ -183,7 +183,7 @@
 
     <main class="max-width">
         <!-- Featured Article -->
-        <article class="featured-post" id="featured-hero">
+        <article class="featured-post reveal-scale" id="featured-hero">
             <div class="featured-img">
                 <img src="blog images/mern-header.png" alt="MERN Stack" loading="lazy">
             </div>
@@ -196,7 +196,7 @@
         </article>
 
         <!-- Filters -->
-        <div class="filter-nav">
+        <div class="filter-nav reveal-on-scroll">
             <a href="#" class="filter-btn active" data-filter="all">All Posts</a>
             <a href="#" class="filter-btn" data-filter="fullstack">Full Stack</a>
             <a href="#" class="filter-btn" data-filter="devops">DevOps</a>
@@ -208,7 +208,7 @@
         <div class="main-layout">
             <div class="blog-grid" id="blog-grid">
                 <!-- Blog 1 (Copy of Featured for Grid) -->
-                <div class="blog-card" data-category="fullstack">
+                <div class="blog-card reveal-scale delay-1" data-category="fullstack">
                     <a href="blog/mern-stack.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/mern-header.png" alt="MERN Stack" loading="lazy"></div>
                         <div class="blog-info">
@@ -220,7 +220,7 @@
                 </div>
 
                 <!-- Blog 2 -->
-                <div class="blog-card" data-category="devops">
+                <div class="blog-card reveal-scale delay-2" data-category="devops">
                     <a href="blog/devops-pipeline.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/cicd-header.png" alt="DevOps" loading="lazy"></div>
                         <div class="blog-info">
@@ -232,7 +232,7 @@
                 </div>
 
                 <!-- Blog 3 -->
-                <div class="blog-card" data-category="ai">
+                <div class="blog-card reveal-scale delay-3" data-category="ai">
                     <a href="blog/ai-finetuning.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/ai-header.png" alt="AI LLM" loading="lazy"></div>
                         <div class="blog-info">
@@ -244,7 +244,7 @@
                 </div>
 
                 <!-- Blog 4 -->
-                <div class="blog-card" data-category="architecture">
+                <div class="blog-card reveal-scale delay-1" data-category="architecture">
                     <a href="blog/microservices-architecture.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/micro-header.png" alt="Microservices" loading="lazy"></div>
                         <div class="blog-info">
@@ -256,7 +256,7 @@
                 </div>
 
                 <!-- Blog 5 -->
-                <div class="blog-card" data-category="blockchain">
+                <div class="blog-card reveal-scale delay-2" data-category="blockchain">
                     <a href="blog/blockchain-basics.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/blockchain-header.png" alt="Blockchain" loading="lazy"></div>
                         <div class="blog-info">
@@ -268,7 +268,7 @@
                 </div>
 
                 <!-- Blog 6 -->
-                <div class="blog-card" data-category="architecture">
+                <div class="blog-card reveal-scale delay-3" data-category="architecture">
                     <a href="blog/database-optimization.html" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-img"><img src="blog images/db-header.png" alt="Database Optimization" loading="lazy"></div>
                         <div class="blog-info">
@@ -281,7 +281,7 @@
             </div>
 
             <!-- Sidebar -->
-            <aside class="sidebar">
+            <aside class="sidebar reveal-right">
                 <div class="sidebar-section">
                     <h4>About the Author</h4>
                     <div class="about-box">
@@ -365,15 +365,28 @@
 
     <footer>
         <div class="max-width">
+            <div class="footer-cta">
+                <h2>Ready to collaborate?</h2>
+                <p>Let's build something amazing together.</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center; margin-bottom: 40px;">
+                    <a href="mailto:bsouvik986@gmail.com" class="footer-cta-btn btn-email">Email Me</a>
+                    <a href="https://wa.me/919851964445" target="_blank" class="footer-cta-btn btn-whatsapp"><i class="fab fa-whatsapp" style="font-size: 20px;"></i> WhatsApp Me</a>
+                </div>
+            </div>
+
             <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px;">Souvik Basu</h2>
             <p style="opacity: 0.6; font-size: 14px; margin-bottom: 40px;">Crafting the future of software, one byte at a time.</p>
             <div style="display: flex; justify-content: center; gap: 30px; font-size: 20px;">
                 <a href="https://www.linkedin.com/in/souvik-basu-99a4581a2/" target="_blank" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
-                <a href="#" style="color: #fff;"><i class="fab fa-github"></i></a>
-                <a href="#" style="color: #fff;"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/thundergod-vicky" target="_blank" style="color: #fff;"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/commit.push/" target="_blank" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/919851964445" target="_blank" style="color: #fff;"><i class="fab fa-whatsapp"></i></a>
             </div>
             <p style="margin-top: 60px; font-size: 12px; opacity: 0.4;">&copy; 2026 THE ENGINEERING JOURNAL. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <script src="animations.js"></script>
+
 </body>
 </html>

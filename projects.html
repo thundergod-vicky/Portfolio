@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects – Souvik Basu | Full Stack Developer</title>
+    <meta name="description" content="Explore the portfolio of Souvik Basu – web apps, SaaS platforms, EdTech solutions, and business tools built with MERN, Next.js, AWS, and more.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/peep_human_person_avatar_icon_192316.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════════════════ */
+        /*  PROJECTS PAGE – PREMIUM SHOWCASE                      */
+        /* ═══════════════════════════════════════════════════════ */
+
+        :root {
+            --pj-dark: #0a0a0f;
+            --pj-surface: #12121a;
+            --pj-surface-2: #1a1a28;
+            --pj-surface-3: #222236;
+            --pj-accent: #003bfd;
+            --pj-accent-glow: rgba(0, 59, 253, 0.35);
+            --pj-cyan: #03f8f8;
+            --pj-text: #eaeaf0;
+            --pj-text-muted: #8888a0;
+            --pj-border: rgba(255, 255, 255, 0.06);
+            --pj-card-bg: linear-gradient(145deg, rgba(18, 18, 26, 0.95), rgba(26, 26, 40, 0.8));
+        }
+
+        body {
+            background: var(--pj-dark);
+            color: var(--pj-text);
+            font-family: 'Outfit', 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ═══ NAVBAR ═══ */
+        .navbar {
+            background: rgba(10, 10, 15, 0.92) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 15px 0 !important;
+        }
+        .navbar .logo a { color: #fff !important; }
+        .navbar .menu li a { color: #aaa !important; }
+        .navbar .menu li a:hover { color: var(--pj-accent) !important; }
+
+        /* ═══ HERO ═══ */
+        .pj-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 140px 40px 80px;
+            text-align: center;
+        }
+
+        .pj-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(0, 59, 253, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 60%, rgba(3, 248, 248, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, var(--pj-dark) 0%, var(--pj-surface) 60%, var(--pj-dark) 100%);
+            z-index: 0;
+        }
+
+        /* Grid background */
+        .pj-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 0;
+        }
+
+        .pj-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .pj-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 59, 253, 0.12);
+            border: 1px solid rgba(0, 59, 253, 0.25);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--pj-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .pj-hero h1 {
+            font-size: clamp(40px, 7vw, 80px);
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, var(--pj-accent) 60%, var(--pj-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pj-hero p {
+            font-size: 18px;
+            color: var(--pj-text-muted);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* Stats strip */
+        .pj-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .pj-hero-stat {
+            text-align: center;
+        }
+
+        .pj-hero-stat .num {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .pj-hero-stat .num span {
+            color: var(--pj-accent);
+        }
+
+        .pj-hero-stat .label {
+            font-size: 12px;
+            color: var(--pj-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* ═══ FILTER BAR ═══ */
+        .pj-filters {
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+            padding: 20px 0;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--pj-border);
+        }
+
+        .pj-filters-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pj-filter-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: var(--pj-text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .pj-filter-btn:hover {
+            border-color: var(--pj-accent);
+            color: #fff;
+            background: rgba(0, 59, 253, 0.08);
+        }
+
+        .pj-filter-btn.active {
+            background: var(--pj-accent);
+            color: #fff;
+            border-color: var(--pj-accent);
+            box-shadow: 0 4px 20px var(--pj-accent-glow);
+        }
+
+        /* ═══ PROJECTS GRID ═══ */
+        .pj-grid-section {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .pj-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ═══ PROJECT CARD ═══ */
+        .pj-card {
+            background: var(--pj-card-bg);
+            border: 1px solid var(--pj-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+        }
+
+        .pj-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pj-card.hidden {
+            display: none;
+        }
+
+        .pj-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 59, 253, 0.3);
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(0, 59, 253, 0.08);
+        }
+
+        /* Card image */
+        .pj-card-img {
+            position: relative;
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .pj-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .pj-card:hover .pj-card-img img {
+            transform: scale(1.08);
+        }
+
+        .pj-card-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(transparent, rgba(10, 10, 15, 0.85));
+            pointer-events: none;
+        }
+
+        /* Category badge */
+        .pj-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pj-badge span {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .pj-badge-web {
+            background: rgba(0, 59, 253, 0.75);
+            color: #fff;
+        }
+
+        .pj-badge-business {
+            background: rgba(40, 167, 69, 0.75);
+            color: #fff;
+        }
+
+        .pj-badge-edtech {
+            background: rgba(142, 68, 173, 0.75);
+            color: #fff;
+        }
+
+        /* Live status */
+        .pj-live-dot {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4ade80;
+        }
+
+        .pj-live-dot::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse-live 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-live {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+        }
+
+        /* Card body */
+        .pj-card-body {
+            padding: 25px;
+        }
+
+        .pj-card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .pj-card-desc {
+            color: var(--pj-text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Tech tags */
+        .pj-tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .pj-tech-tag {
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--pj-text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            letter-spacing: 0.3px;
+        }
+
+        /* Card actions */
+        .pj-card-actions {
+            display: flex;
+            gap: 10px;
+            padding-top: 18px;
+            border-top: 1px solid var(--pj-border);
+        }
+
+        .pj-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Outfit', sans-serif;
+            border: none;
+        }
+
+        .pj-btn-primary {
+            background: var(--pj-accent);
+            color: #fff;
+            box-shadow: 0 4px 15px var(--pj-accent-glow);
+        }
+
+        .pj-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--pj-accent-glow);
+        }
+
+        .pj-btn-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--pj-text-muted);
+            border: 1px solid var(--pj-border);
+        }
+
+        .pj-btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ═══ CASE STUDY MODAL ═══ */
+        .pj-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .pj-modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .pj-modal {
+            background: var(--pj-surface);
+            border: 1px solid var(--pj-border);
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(30px) scale(0.97);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .pj-modal-overlay.open .pj-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .pj-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--pj-border);
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .pj-modal-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .pj-modal-header {
+            padding: 35px 35px 0;
+        }
+
+        .pj-modal-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .pj-modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 25px 35px;
+        }
+
+        .pj-modal-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--pj-border);
+            border-radius: 16px;
+        }
+
+        .pj-modal-item h4 {
+            color: var(--pj-accent);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .pj-modal-item p {
+            color: var(--pj-text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .pj-modal-footer {
+            padding: 20px 35px 35px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .pj-modal-footer .pj-btn {
+            flex: unset;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 15px;
+        }
+
+        /* Modal scrollbar */
+        .pj-modal::-webkit-scrollbar {
+            width: 6px;
+        }
+        .pj-modal::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .pj-modal::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+
+        /* ═══ CTA SECTION ═══ */
+        .pj-cta {
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pj-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at center, rgba(0, 59, 253, 0.1) 0%, transparent 60%),
+                linear-gradient(180deg, var(--pj-dark), var(--pj-surface-2), var(--pj-dark));
+        }
+
+        .pj-cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pj-cta h2 {
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .pj-cta p {
+            color: var(--pj-text-muted);
+            font-size: 17px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pj-cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pj-cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--pj-accent);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 4px 20px var(--pj-accent-glow);
+        }
+
+        .pj-cta-btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 35px var(--pj-accent-glow);
+        }
+
+        .pj-cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .pj-cta-btn-secondary:hover {
+            border-color: var(--pj-accent);
+            background: rgba(0, 59, 253, 0.08);
+            transform: translateY(-3px);
+        }
+
+        /* ═══ FOOTER ═══ */
+        .pj-footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--pj-border);
+        }
+        .pj-footer span { color: var(--pj-text-muted); font-size: 14px; }
+        .pj-footer a { color: var(--pj-accent); text-decoration: none; }
+        .pj-footer .heart-icon { color: #e94560; }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .pj-grid {
+                grid-template-columns: 1fr;
+            }
+            .pj-modal-grid {
+                grid-template-columns: 1fr;
+            }
+            .pj-hero { padding: 120px 20px 60px; }
+            .pj-hero-stats { gap: 30px; }
+        }
+
+        @media (max-width: 600px) {
+            .pj-hero-stat .num { font-size: 28px; }
+            .pj-card-body { padding: 20px; }
+            .pj-card-title { font-size: 18px; }
+            .pj-modal-header { padding: 25px 20px 0; }
+            .pj-modal-grid { padding: 20px; }
+            .pj-modal-footer { padding: 15px 20px 25px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pj-card {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky">
+        <div class="max-width">
+            <div class="logo"><a href="index.html" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 26px;">Souvik Basu</a></div>
+            <ul class="menu">
+                <li><a href="index.html#home" class="menu-btn">Home</a></li>
+                <li><a href="index.html#about" class="menu-btn">About</a></li>
+                <li><a href="index.html#services" class="menu-btn">Services</a></li>
+                <li><a href="index.html#skills" class="menu-btn">Skills</a></li>
+                <li><a href="projects.html" class="menu-btn" style="color: var(--pj-accent) !important;">Projects</a></li>
+                <li><a href="blogs.html" class="menu-btn">Blog</a></li>
+                <li><a href="youtube.html" class="menu-btn">YouTube</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="pj-hero">
+        <div class="pj-hero-content">
+            <div class="pj-hero-badge"><i class="fas fa-code"></i> Portfolio</div>
+            <h1>Crafting Digital Experiences</h1>
+            <p>From SaaS platforms to EdTech solutions — each project is a story of problem-solving, clean architecture, and real-world impact.</p>
+            <div class="pj-hero-stats">
+                <div class="pj-hero-stat">
+                    <div class="num">6<span>+</span></div>
+                    <div class="label">Live Projects</div>
+                </div>
+                <div class="pj-hero-stat">
+                    <div class="num">1K<span>+</span></div>
+                    <div class="label">Users Served</div>
+                </div>
+                <div class="pj-hero-stat">
+                    <div class="num">10<span>+</span></div>
+                    <div class="label">Technologies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FILTER BAR ═══ -->
+    <div class="pj-filters">
+        <div class="pj-filters-inner">
+            <button class="pj-filter-btn active" data-filter="all">All Projects</button>
+            <button class="pj-filter-btn" data-filter="web">Web Apps</button>
+            <button class="pj-filter-btn" data-filter="business">Business</button>
+            <button class="pj-filter-btn" data-filter="edtech">EdTech</button>
+        </div>
+    </div>
+
+    <!-- ═══ PROJECTS GRID ═══ -->
+    <section class="pj-grid-section">
+        <div class="pj-grid" id="projectsGrid">
+
+            <!-- GLL.one -->
+            <div class="pj-card" data-categories="web"
+                 data-title="GLL.one"
+                 data-problem="Digital accessibility and service discovery for local businesses lacked a unified, modern platform. I aimed to bridge the gap between users and providers by building a seamless, high-performance ecosystem from the ground up."
+                 data-role="Full Stack Developer &amp; System Architect (Built From Scratch)"
+                 data-tech="React, Tailwind CSS, Framer Motion, Node.js, Express, MongoDB"
+                 data-result="Independently architected and developed the entire platform from scratch, achieving a 35% increase in user engagement through optimized UI/UX flows."
+                 data-url="https://www.gll.one">
+                <div class="pj-card-img">
+                    <img src="/project images /2 gll.png" alt="GLL.one Platform" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">GLL.one</h3>
+                    <p class="pj-card-desc">Modern web platform for innovative digital solutions — bridging the gap between users and local service providers with a seamless, high-performance ecosystem.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">React</span>
+                        <span class="pj-tech-tag">Tailwind</span>
+                        <span class="pj-tech-tag">Node.js</span>
+                        <span class="pj-tech-tag">MongoDB</span>
+                        <span class="pj-tech-tag">Framer Motion</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://www.gll.one" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GrowIn360 -->
+            <div class="pj-card" data-categories="web business"
+                 data-title="GrowIn360"
+                 data-problem="Small businesses struggled to manage their growth metrics and internal tools across fragmented platforms."
+                 data-role="Full Stack Developer"
+                 data-tech="MERN Stack, Redis, AWS EC2, Chart.js"
+                 data-result="Consolidated 5+ business tools into one 360-degree dashboard, reducing management overhead by 25%."
+                 data-url="https://www.growin360.com">
+                <div class="pj-card-img">
+                    <img src="/project images /growin3601.png" alt="GrowIn360 Dashboard" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                        <span class="pj-badge-business">Business</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">GrowIn360</h3>
+                    <p class="pj-card-desc">360-degree business growth management platform — consolidated 5+ fragmented tools into one unified dashboard for small businesses.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">MERN</span>
+                        <span class="pj-tech-tag">Redis</span>
+                        <span class="pj-tech-tag">AWS EC2</span>
+                        <span class="pj-tech-tag">Chart.js</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://www.growin360.com" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GrowInvoice -->
+            <div class="pj-card" data-categories="web business"
+                 data-title="GrowInvoice"
+                 data-problem="Manual invoice processing was slow, prone to errors, and took up hours of administrative time."
+                 data-role="Lead Backend Architect"
+                 data-tech="Node.js, MongoDB, PDFKit, AWS S3"
+                 data-result="Automated the entire invoicing lifecycle, reducing manual processing time by 40% and eliminating human error."
+                 data-url="https://www.growinvoice.com">
+                <div class="pj-card-img">
+                    <img src="/project images /growinvoice1.png" alt="GrowInvoice Platform" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                        <span class="pj-badge-business">Business</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">GrowInvoice</h3>
+                    <p class="pj-card-desc">Automated invoice generation and financial management — eliminating manual processing errors and reducing admin time by 40%.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">Node.js</span>
+                        <span class="pj-tech-tag">MongoDB</span>
+                        <span class="pj-tech-tag">PDFKit</span>
+                        <span class="pj-tech-tag">AWS S3</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://www.growinvoice.com" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sempione -->
+            <div class="pj-card" data-categories="web"
+                 data-title="Sempione"
+                 data-problem="Design-centric brands needed a high-end visual showcase that reflected their premium aesthetic while remaining lightning fast."
+                 data-role="Frontend Specialist"
+                 data-tech="Next.js, Three.js, SCSS, Vercel"
+                 data-result="Delivered a futuristic portfolio with 3D elements that maintains a 98+ Lighthouse performance score."
+                 data-url="https://www.sempione.xyz">
+                <div class="pj-card-img">
+                    <img src="/project images /3 sempione.png" alt="Sempione Design" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">Sempione</h3>
+                    <p class="pj-card-desc">Futuristic portfolio with 3D elements — a high-end visual showcase maintaining 98+ Lighthouse score for design-centric brands.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">Next.js</span>
+                        <span class="pj-tech-tag">Three.js</span>
+                        <span class="pj-tech-tag">SCSS</span>
+                        <span class="pj-tech-tag">Vercel</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://www.sempione.xyz" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adhyayan -->
+            <div class="pj-card" data-categories="web edtech"
+                 data-title="Adhyayan"
+                 data-problem="Educational institutions needed a centralized, real-time platform to manage courses, student progress, and interactive learning materials."
+                 data-role="Backend Developer &amp; Database Designer"
+                 data-tech="MERN Stack, Socket.io, AWS S3, JWT"
+                 data-result="Developed a comprehensive EdTech solution that facilitated 1000+ active learners with seamless resource management."
+                 data-url="https://app.adhyayanedu.in">
+                <div class="pj-card-img">
+                    <img src="/project images /adhyayanedu1.png" alt="Adhyayan EdTech" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                        <span class="pj-badge-edtech">EdTech</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">Adhyayan</h3>
+                    <p class="pj-card-desc">Comprehensive EdTech platform for modern education — facilitating 1000+ active learners with real-time course management and interactive materials.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">MERN</span>
+                        <span class="pj-tech-tag">Socket.io</span>
+                        <span class="pj-tech-tag">AWS S3</span>
+                        <span class="pj-tech-tag">JWT</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://app.adhyayanedu.in" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mondal Packers -->
+            <div class="pj-card" data-categories="web business"
+                 data-title="Mondal Packers"
+                 data-problem="The packers and movers industry in India often lacks a professional digital presence that builds trust through transparent pricing and verified service standards."
+                 data-role="Web Developer &amp; Designer"
+                 data-tech="HTML, CSS, JavaScript, Responsive Design"
+                 data-result="Created a premium, conversion-focused landing page with integrated lead capture and WhatsApp engagement, enhancing customer trust and inquiry rates."
+                 data-url="https://mpm.sfinteriordecoration.com/">
+                <div class="pj-card-img">
+                    <img src="/project images /mondal.png" alt="Mondal Packers" loading="lazy">
+                    <div class="pj-badge">
+                        <span class="pj-badge-web">Web App</span>
+                        <span class="pj-badge-business">Business</span>
+                    </div>
+                    <div class="pj-live-dot">Live</div>
+                </div>
+                <div class="pj-card-body">
+                    <h3 class="pj-card-title">Mondal Packers</h3>
+                    <p class="pj-card-desc">Premium logistics and relocation service platform — a conversion-focused landing page with lead capture and WhatsApp engagement integration.</p>
+                    <div class="pj-tech-tags">
+                        <span class="pj-tech-tag">HTML</span>
+                        <span class="pj-tech-tag">CSS</span>
+                        <span class="pj-tech-tag">JavaScript</span>
+                        <span class="pj-tech-tag">Responsive</span>
+                    </div>
+                    <div class="pj-card-actions">
+                        <button class="pj-btn pj-btn-ghost pj-case-study-btn"><i class="fas fa-book-open"></i> Case Study</button>
+                        <a href="https://mpm.sfinteriordecoration.com/" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══ CASE STUDY MODAL ═══ -->
+    <div class="pj-modal-overlay" id="caseStudyModal">
+        <div class="pj-modal">
+            <button class="pj-modal-close" id="modalClose">&times;</button>
+            <div class="pj-modal-header">
+                <h2 class="pj-modal-title" id="mTitle">Project Title</h2>
+            </div>
+            <div class="pj-modal-grid">
+                <div class="pj-modal-item">
+                    <h4><i class="fas fa-exclamation-triangle"></i> The Problem</h4>
+                    <p id="mProblem">...</p>
+                </div>
+                <div class="pj-modal-item">
+                    <h4><i class="fas fa-user-tie"></i> My Role</h4>
+                    <p id="mRole">...</p>
+                </div>
+                <div class="pj-modal-item">
+                    <h4><i class="fas fa-layer-group"></i> Tech Stack</h4>
+                    <p id="mTech">...</p>
+                </div>
+                <div class="pj-modal-item">
+                    <h4><i class="fas fa-chart-line"></i> The Result</h4>
+                    <p id="mResult">...</p>
+                </div>
+            </div>
+            <div class="pj-modal-footer">
+                <a id="mDemoBtn" href="#" target="_blank" class="pj-btn pj-btn-primary"><i class="fas fa-external-link-alt"></i> Launch Live Demo</a>
+                <button class="pj-btn pj-btn-ghost" onclick="closeCaseStudy()"><i class="fas fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="pj-cta">
+        <div class="pj-cta-inner">
+            <h2>Have a Project in Mind?</h2>
+            <p>Let's turn your idea into a production-ready product. I'm always open to new challenges.</p>
+            <div class="pj-cta-btns">
+                <a href="index.html#contact" class="pj-cta-btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                <a href="index.html" class="pj-cta-btn-secondary"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="pj-footer">
+        <span>Built with <i class="fas fa-heart heart-icon"></i> by <a href="https://www.instagram.com/commit.push" target="_blank">Vicky</a></span>
+        <br><br>
+        <span><i class="far fa-copyright"></i> 2026. All rights reserved.</span>
+    </footer>
+
+    <script>
+        // ═══════════════════════════════════════════
+        //  FILTER LOGIC
+        // ═══════════════════════════════════════════
+        const filterBtns = document.querySelectorAll('.pj-filter-btn');
+        const cards = document.querySelectorAll('.pj-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                cards.forEach((card, i) => {
+                    const cats = card.dataset.categories || '';
+                    const match = filter === 'all' || cats.includes(filter);
+
+                    if (match) {
+                        card.classList.remove('hidden');
+                        // Re-trigger reveal animation
+                        card.classList.remove('visible');
+                        setTimeout(() => card.classList.add('visible'), i * 80);
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('visible');
+                    }
+                });
+            });
+        });
+
+        // ═══════════════════════════════════════════
+        //  SCROLL REVEAL
+        // ═══════════════════════════════════════════
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => entry.target.classList.add('visible'), delay);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        cards.forEach((card, i) => {
+            card.dataset.delay = i * 100;
+            revealObserver.observe(card);
+        });
+
+        // ═══════════════════════════════════════════
+        //  CASE STUDY MODAL
+        // ═══════════════════════════════════════════
+        const modal = document.getElementById('caseStudyModal');
+
+        document.querySelectorAll('.pj-case-study-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.pj-card');
+                document.getElementById('mTitle').textContent = card.dataset.title;
+                document.getElementById('mProblem').textContent = card.dataset.problem;
+                document.getElementById('mRole').textContent = card.dataset.role;
+                document.getElementById('mTech').textContent = card.dataset.tech;
+                document.getElementById('mResult').textContent = card.dataset.result;
+                document.getElementById('mDemoBtn').href = card.dataset.url;
+
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeCaseStudy() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modalClose').addEventListener('click', closeCaseStudy);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeCaseStudy();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCaseStudy();
+        });
+
+        // ═══════════════════════════════════════════
+        //  MOBILE NAV TOGGLE
+        // ═══════════════════════════════════════════
+        const menuBtn = document.querySelector('.menu-btn');
+        const navMenu = document.querySelector('.navbar .menu');
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuBtn.querySelector('i').classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

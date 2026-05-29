@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitWise | YouTube Channel – Souvik Basu</title>
+    <meta name="description" content="Watch GitWise vlogs by Souvik Basu – daily developer life, tech projects, and adventures. Follow the journey of a 23-year-old corporate developer chasing dreams.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" href="/peep_human_person_avatar_icon_192316.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════════════════════ */
+        /*  YOUTUBE PAGE – STORY MODE CINEMATIC DESIGN            */
+        /* ═══════════════════════════════════════════════════════ */
+
+        :root {
+            --yt-red: #FF0000;
+            --yt-red-dark: #CC0000;
+            --yt-dark: #0f0f0f;
+            --yt-surface: #1a1a2e;
+            --yt-surface-2: #16213e;
+            --yt-accent: #e94560;
+            --yt-gradient-1: #0f0f0f;
+            --yt-gradient-2: #1a1a2e;
+            --yt-gradient-3: #16213e;
+            --yt-text: #f5f5f5;
+            --yt-text-muted: #a0a0b0;
+            --yt-glow: rgba(233, 69, 96, 0.4);
+        }
+
+        body {
+            background: var(--yt-dark);
+            color: var(--yt-text);
+            font-family: 'Outfit', 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ═══ NAVBAR OVERRIDE FOR DARK THEME ═══ */
+        .navbar {
+            background: rgba(15, 15, 15, 0.9) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 15px 0 !important;
+        }
+        .navbar .logo a { color: #fff !important; }
+        .navbar .menu li a { color: #ccc !important; }
+        .navbar .menu li a:hover { color: var(--yt-accent) !important; }
+
+        /* ═══ HERO SECTION ═══ */
+        .yt-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 120px 40px 80px;
+        }
+
+        .yt-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(233, 69, 96, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(22, 33, 62, 0.8) 0%, transparent 60%),
+                linear-gradient(180deg, var(--yt-dark) 0%, var(--yt-surface) 50%, var(--yt-dark) 100%);
+            z-index: 0;
+        }
+
+        /* Floating particles */
+        .yt-hero .particles {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .yt-hero .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(233, 69, 96, 0.3);
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        .yt-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .yt-channel-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--yt-accent);
+            box-shadow: 0 0 40px var(--yt-glow), 0 0 80px rgba(233, 69, 96, 0.2);
+            margin: 0 auto 30px;
+            overflow: hidden;
+            animation: avatar-glow 3s ease-in-out infinite alternate;
+            background: var(--yt-surface);
+        }
+
+        .yt-channel-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes avatar-glow {
+            from { box-shadow: 0 0 30px var(--yt-glow), 0 0 60px rgba(233, 69, 96, 0.15); }
+            to { box-shadow: 0 0 50px var(--yt-glow), 0 0 100px rgba(233, 69, 96, 0.3); }
+        }
+
+        .yt-channel-name {
+            font-size: clamp(48px, 8vw, 90px);
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #e94560 50%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .yt-channel-handle {
+            font-size: 18px;
+            color: var(--yt-text-muted);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .yt-channel-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0 35px;
+            flex-wrap: wrap;
+        }
+
+        .yt-stat {
+            text-align: center;
+        }
+
+        .yt-stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--yt-accent);
+        }
+
+        .yt-stat-label {
+            font-size: 13px;
+            color: var(--yt-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .yt-subscribe-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .yt-subscribe-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ff1a1a, #e60000);
+        }
+
+        .yt-subscribe-btn i {
+            font-size: 22px;
+        }
+
+        .yt-hero-tagline {
+            font-size: 18px;
+            color: var(--yt-text-muted);
+            margin-top: 20px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* ═══ SCROLL INDICATOR ═══ */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            font-size: 12px;
+            color: var(--yt-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .scroll-indicator i {
+            color: var(--yt-accent);
+            font-size: 20px;
+        }
+
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ═══ STORY TIMELINE ═══ */
+        .yt-story-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .yt-story-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 30%, rgba(233, 69, 96, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(22, 33, 62, 0.3) 0%, transparent 50%);
+        }
+
+        .yt-section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .yt-section-header h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #e94560);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .yt-section-header p {
+            color: var(--yt-text-muted);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Timeline spine */
+        .yt-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .yt-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, transparent, var(--yt-accent), var(--yt-accent), transparent);
+            transform: translateX(-50%);
+        }
+
+        /* Timeline node */
+        .yt-timeline-node {
+            position: relative;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .yt-timeline-node.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Alternate left/right */
+        .yt-timeline-node:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: calc(50% + 40px);
+        }
+
+        .yt-timeline-node:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: calc(50% + 40px);
+        }
+
+        /* Timeline dot */
+        .yt-timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 18px;
+            height: 18px;
+            background: var(--yt-accent);
+            border: 3px solid var(--yt-dark);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            box-shadow: 0 0 20px var(--yt-glow);
+            transition: all 0.4s ease;
+        }
+
+        .yt-timeline-node:hover .yt-timeline-dot {
+            transform: translate(-50%, -50%) scale(1.5);
+            box-shadow: 0 0 30px var(--yt-glow);
+        }
+
+        /* Day badge on timeline */
+        .yt-day-badge {
+            position: absolute;
+            left: 50%;
+            top: -30px;
+            transform: translateX(-50%);
+            background: var(--yt-accent);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            z-index: 3;
+        }
+
+        /* Video Card */
+        .yt-video-card {
+            width: 100%;
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.7));
+            border: 1px solid rgba(233, 69, 96, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .yt-video-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(233, 69, 96, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(233, 69, 96, 0.15);
+        }
+
+        .yt-thumb-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            cursor: pointer;
+            background: #111;
+        }
+
+        .yt-thumb-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .yt-video-card:hover .yt-thumb-wrapper img {
+            transform: scale(1.08);
+            filter: brightness(0.7);
+        }
+
+        /* Play button overlay */
+        .yt-play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .yt-video-card:hover .yt-play-overlay {
+            opacity: 1;
+        }
+
+        .yt-play-btn-circle {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+
+        .yt-play-btn-circle:hover {
+            transform: scale(1.1);
+            background: rgba(255, 0, 0, 1);
+        }
+
+        .yt-play-btn-circle i {
+            color: #fff;
+            font-size: 28px;
+            margin-left: 4px;
+        }
+
+        /* Duration badge */
+        .yt-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .yt-card-info {
+            padding: 20px;
+        }
+
+        .yt-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--yt-text);
+            line-height: 1.4;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .yt-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--yt-text-muted);
+        }
+
+        .yt-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Embedded player state */
+        .yt-thumb-wrapper.playing img,
+        .yt-thumb-wrapper.playing .yt-play-overlay,
+        .yt-thumb-wrapper.playing .yt-duration {
+            display: none;
+        }
+
+        .yt-thumb-wrapper.playing {
+            background: #000;
+        }
+
+        .yt-thumb-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            border: none;
+        }
+
+        /* ═══ FEATURED / LATEST VIDEO ═══ */
+        .yt-featured {
+            padding: 60px 40px 80px;
+            position: relative;
+        }
+
+        .yt-featured-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .yt-featured-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 0, 0, 0.1));
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--yt-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .yt-featured-label i {
+            font-size: 10px;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .yt-featured-card {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.8));
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .yt-featured-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .yt-featured-card .yt-thumb-wrapper {
+            aspect-ratio: 16/9;
+        }
+
+        .yt-featured-card .yt-card-info {
+            padding: 30px;
+        }
+
+        .yt-featured-card .yt-card-title {
+            font-size: 22px;
+            -webkit-line-clamp: 3;
+        }
+
+        /* ═══ ALL VIDEOS GRID (below timeline) ═══ */
+        .yt-grid-section {
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .yt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .yt-grid .yt-video-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .yt-grid .yt-video-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ CTA BANNER ═══ */
+        .yt-cta-banner {
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yt-cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at center, rgba(233, 69, 96, 0.12) 0%, transparent 60%),
+                linear-gradient(180deg, var(--yt-dark), var(--yt-surface-2), var(--yt-dark));
+        }
+
+        .yt-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .yt-cta-content h2 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .yt-cta-content p {
+            color: var(--yt-text-muted);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .yt-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .yt-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .yt-cta-secondary:hover {
+            border-color: var(--yt-accent);
+            background: rgba(233, 69, 96, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ═══ FOOTER (reuse from main site) ═══ */
+        .yt-footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .yt-footer span {
+            color: var(--yt-text-muted);
+            font-size: 14px;
+        }
+
+        .yt-footer a {
+            color: var(--yt-accent);
+            text-decoration: none;
+        }
+
+        .yt-footer .heart-icon {
+            color: var(--yt-accent);
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .yt-timeline::before {
+                left: 20px;
+            }
+
+            .yt-timeline-node:nth-child(odd),
+            .yt-timeline-node:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .yt-timeline-dot {
+                left: 20px;
+            }
+
+            .yt-day-badge {
+                left: 20px;
+                transform: translateX(0);
+            }
+
+            .yt-hero {
+                padding: 120px 20px 80px;
+            }
+
+            .yt-channel-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+
+            .yt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .yt-channel-stats {
+                gap: 20px;
+            }
+
+            .yt-stat-value { font-size: 22px; }
+
+            .yt-featured-card .yt-card-title { font-size: 18px; }
+            .yt-featured-card .yt-card-info { padding: 20px; }
+
+            .yt-timeline-node {
+                margin-bottom: 50px;
+            }
+
+            .yt-card-info { padding: 15px; }
+            .yt-card-title { font-size: 14px; }
+        }
+
+        /* ═══ PREFERS REDUCED MOTION ═══ */
+        @media (prefers-reduced-motion: reduce) {
+            .yt-timeline-node,
+            .yt-featured-card,
+            .yt-grid .yt-video-card {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .particle {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar sticky">
+        <div class="max-width">
+            <div class="logo"><a href="index.html" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 26px;">Souvik Basu</a></div>
+            <ul class="menu">
+                <li><a href="index.html#home" class="menu-btn">Home</a></li>
+                <li><a href="index.html#about" class="menu-btn">About</a></li>
+                <li><a href="index.html#services" class="menu-btn">Services</a></li>
+                <li><a href="index.html#skills" class="menu-btn">Skills</a></li>
+                <li><a href="index.html#work" class="menu-btn">Portfolio</a></li>
+                <li><a href="blogs.html" class="menu-btn">Blog</a></li>
+                <li><a href="youtube.html" class="menu-btn" style="color: var(--yt-accent) !important;">YouTube</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="yt-hero" id="yt-hero">
+        <div class="particles" id="particles"></div>
+        <div class="yt-hero-content">
+            <div class="yt-channel-avatar"><img src="GitWise.png" alt="GitWise Channel Logo"></div>
+            <h1 class="yt-channel-name">GitWise</h1>
+            <p class="yt-channel-handle">@gitwise2k26</p>
+            <div class="yt-channel-stats">
+                <div class="yt-stat">
+                    <div class="yt-stat-value" id="subCount">31</div>
+                    <div class="yt-stat-label">Subscribers</div>
+                </div>
+                <div class="yt-stat">
+                    <div class="yt-stat-value">17</div>
+                    <div class="yt-stat-label">Videos</div>
+                </div>
+                <div class="yt-stat">
+                    <div class="yt-stat-value">Daily</div>
+                    <div class="yt-stat-label">Uploads</div>
+                </div>
+            </div>
+            <a href="https://youtube.com/@gitwise2k26?sub_confirmation=1" target="_blank" class="yt-subscribe-btn" id="subscribeBtn">
+                <i class="fab fa-youtube"></i> Subscribe
+            </a>
+            <p class="yt-hero-tagline">A 23-year-old developer documenting the raw, unfiltered journey of balancing corporate life, side projects, and chasing dreams — one vlog at a time.</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ═══ FEATURED / LATEST VIDEO ═══ -->
+    <section class="yt-featured">
+        <div class="yt-featured-inner">
+            <div class="yt-featured-label"><i class="fas fa-circle"></i> Latest Upload</div>
+            <div class="yt-featured-card" id="featuredCard">
+                <div class="yt-thumb-wrapper" data-video-id="ZVzNiD_ygA8" onclick="playVideo(this)">
+                    <img src="https://i.ytimg.com/vi/ZVzNiD_ygA8/maxresdefault.jpg" 
+                         alt="Day 15 Vlog – Revealing My Luxurious Flat" 
+                         loading="eager">
+                    <div class="yt-play-overlay">
+                        <div class="yt-play-btn-circle"><i class="fas fa-play"></i></div>
+                    </div>
+                    <span class="yt-duration">5:26</span>
+                </div>
+                <div class="yt-card-info">
+                    <h3 class="yt-card-title">Day 15 Vlog 😵‍💫✨ | Revealing My Luxurious Flat… But Something Bad Happened in Hyderabad 💔</h3>
+                    <div class="yt-card-meta">
+                        <span><i class="fas fa-eye"></i> 4 views</span>
+                        <span><i class="fas fa-clock"></i> Just uploaded</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ STORY TIMELINE ═══ -->
+    <section class="yt-story-section">
+        <div class="yt-section-header">
+            <h2>The Journey So Far</h2>
+            <p>Every day a new chapter. Scroll through the story.</p>
+        </div>
+
+        <div class="yt-timeline" id="timeline">
+
+            <!-- Day 14 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 14</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="jvU0baSqL3c" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/jvU0baSqL3c/hqdefault.jpg" alt="Day 14 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">6:12</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 14 Vlog 🚀 | Starting My Website Selling Company "Web Browse" 2Day While Running on Zero Sleep😵‍💫</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 6 views</span>
+                            <span><i class="fas fa-clock"></i> 1 day ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 13 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 13</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="FZNqUwMYdfA" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/FZNqUwMYdfA/hqdefault.jpg" alt="Day 13 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">6:52</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 13 Vlog ☕💔 | Heartbroken Without Morning Chai… Found My Old College Memory Lane Shop Again 😵‍💫</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 4 views</span>
+                            <span><i class="fas fa-clock"></i> 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 12 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 12</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="ka0D3QLhtW8" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/ka0D3QLhtW8/hqdefault.jpg" alt="Day 12 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">7:03</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 12 Vlog 🔧 | Pulsar ECU Failure? Plus the Best Breakfast Ever 🤤</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 5 views</span>
+                            <span><i class="fas fa-clock"></i> 3 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 11 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 11</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="qE7YEnP7Sag" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/qE7YEnP7Sag/hqdefault.jpg" alt="Day 11 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">11:19</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 11 Vlog 😴🚨 | I Saw a Highway Accident… Then I Built an App. This Might Actually Be Useful?</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 7 views</span>
+                            <span><i class="fas fa-clock"></i> 4 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 10 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 10</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="zH_zGEUaOd0" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/zH_zGEUaOd0/hqdefault.jpg" alt="Day 10 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">5:02</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 10 Vlog 😴 | There Is Nothing Here More Valuable… Worst Vlog on My Channel?</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 4 views</span>
+                            <span><i class="fas fa-clock"></i> 5 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 9 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 9</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="0Y0sMGu2HCQ" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/0Y0sMGu2HCQ/hqdefault.jpg" alt="Day 9 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">9:40</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 9 Vlog 🏍️✨ | My Childhood Dream Still Hasn't Changed… What is it?</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 8 views</span>
+                            <span><i class="fas fa-clock"></i> 6 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 8 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 8</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="18UN6o5axdo" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/18UN6o5axdo/hqdefault.jpg" alt="Day 8 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">11:24</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day-8 | AWS Cost Optimization Project | Advanced Cloud & DevOps SaaS Built in 1 Day | GITWISE 🔥</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 6 views</span>
+                            <span><i class="fas fa-clock"></i> 1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 7</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="pF6Ni-6Z0FI" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/pF6Ni-6Z0FI/hqdefault.jpg" alt="Day 7 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">10:07</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Trying to Stay Strong… Mom's Surgery & My Pulsar Ride | Day 7 Vlog</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 10 views</span>
+                            <span><i class="fas fa-clock"></i> 8 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 6</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="UsfpuQB1xvU" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/UsfpuQB1xvU/hqdefault.jpg" alt="Day 6 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">9:57</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 6 Vlog 😈 | Sneaking Into My Office for a Whole Night… 45°C Heat & Highway Ride</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 11 views</span>
+                            <span><i class="fas fa-clock"></i> 9 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 5</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="okNro7TgjPk" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/okNro7TgjPk/hqdefault.jpg" alt="Day 5 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">6:28</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 5 Vlog 🚨 | Truck Accident, 3 Cranes Failed & A Beautiful Night Highway Spot</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 20 views</span>
+                            <span><i class="fas fa-clock"></i> 10 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 4</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="7tRrnY8V8SM" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/7tRrnY8V8SM/hqdefault.jpg" alt="Day 4 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">9:29</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 4 Vlog - Gifting Mystery Gifts to my GirlFriend... Drenched in Rain and Going Down Memory Lane</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 18 views</span>
+                            <span><i class="fas fa-clock"></i> 11 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 3</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="6qv0YSPKzeQ" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/6qv0YSPKzeQ/hqdefault.jpg" alt="Day 3 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">10:25</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Day 3 Vlog | Trying to Sell My First Software in Local Market 🙏🏻</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 23 views</span>
+                            <span><i class="fas fa-clock"></i> 12 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 2</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="KT1XIXkO6l4" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/KT1XIXkO6l4/hqdefault.jpg" alt="Day 2 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">11:48</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">Driving My Dodge Challenger on Day 2 😈 | Bike Repair + Personal Projects || Developer Life</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 19 views</span>
+                            <span><i class="fas fa-clock"></i> 2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="yt-timeline-node">
+                <div class="yt-day-badge">DAY 1 – WHERE IT ALL BEGAN</div>
+                <div class="yt-timeline-dot"></div>
+                <div class="yt-video-card">
+                    <div class="yt-thumb-wrapper" data-video-id="-66LDTDRvEE" onclick="playVideo(this)">
+                        <img src="https://i.ytimg.com/vi/-66LDTDRvEE/hqdefault.jpg" alt="Day 1 Vlog" loading="lazy">
+                        <div class="yt-play-overlay"><div class="yt-play-btn-circle"><i class="fas fa-play"></i></div></div>
+                        <span class="yt-duration">5:38</span>
+                    </div>
+                    <div class="yt-card-info">
+                        <h3 class="yt-card-title">A 23 Year Old Corporate Guy Trying To Balance Life, Work & Dreams | GITWISE Vlogs</h3>
+                        <div class="yt-card-meta">
+                            <span><i class="fas fa-eye"></i> 30 views</span>
+                            <span><i class="fas fa-clock"></i> 2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══ CTA BANNER ═══ -->
+    <section class="yt-cta-banner">
+        <div class="yt-cta-content">
+            <h2>Join the Journey 🚀</h2>
+            <p>New vlog every single day. Developer life, adventures, and everything in between.</p>
+            <div class="yt-cta-buttons">
+                <a href="https://youtube.com/@gitwise2k26?sub_confirmation=1" target="_blank" class="yt-subscribe-btn">
+                    <i class="fab fa-youtube"></i> Subscribe Now
+                </a>
+                <a href="index.html" class="yt-cta-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="yt-footer">
+        <span>Built with <i class="fas fa-heart heart-icon"></i> by <a href="https://www.instagram.com/commit.push" target="_blank">Vicky</a></span>
+        <br><br>
+        <span><i class="far fa-copyright"></i> 2026. All rights reserved.</span>
+    </footer>
+
+    <script>
+        // ═══════════════════════════════════════════
+        //  PARTICLES
+        // ═══════════════════════════════════════════
+        (function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion) return;
+
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 12) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.width = (2 + Math.random() * 4) + 'px';
+                p.style.height = p.style.width;
+                p.style.background = Math.random() > 0.5
+                    ? 'rgba(233, 69, 96, 0.3)'
+                    : 'rgba(255, 255, 255, 0.1)';
+                container.appendChild(p);
+            }
+        })();
+
+        // ═══════════════════════════════════════════
+        //  SCROLL REVEAL (IntersectionObserver)
+        // ═══════════════════════════════════════════
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Stagger animation for grid items
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline nodes
+        document.querySelectorAll('.yt-timeline-node').forEach((node, i) => {
+            node.dataset.delay = i * 100;
+            revealObserver.observe(node);
+        });
+
+        // Observe featured card
+        const featuredCard = document.getElementById('featuredCard');
+        if (featuredCard) revealObserver.observe(featuredCard);
+
+        // Observe grid cards
+        document.querySelectorAll('.yt-grid .yt-video-card').forEach((card, i) => {
+            card.dataset.delay = i * 80;
+            revealObserver.observe(card);
+        });
+
+        // ═══════════════════════════════════════════
+        //  LAZY VIDEO EMBED (click-to-play)
+        // ═══════════════════════════════════════════
+        function playVideo(wrapper) {
+            const videoId = wrapper.dataset.videoId;
+            if (!videoId || wrapper.classList.contains('playing')) return;
+
+            wrapper.classList.add('playing');
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.title = 'YouTube video player';
+            wrapper.appendChild(iframe);
+        }
+
+        // ═══════════════════════════════════════════
+        //  MOBILE NAV TOGGLE
+        // ═══════════════════════════════════════════
+        const menuBtn = document.querySelector('.menu-btn');
+        const navMenu = document.querySelector('.navbar .menu');
+
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuBtn.querySelector('i').classList.toggle('active');
+            });
+        }
+
+        // ═══════════════════════════════════════════
+        //  COUNTER ANIMATION
+        // ═══════════════════════════════════════════
+        function animateCounter(el, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    el.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+
+        // Animate subscriber count when visible
+        const subCounter = document.getElementById('subCount');
+        if (subCounter) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(subCounter, 31, 1500);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counterObserver.observe(subCounter);
+        }
+    </script>
+</body>
+</html>
